@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password</title>
+</head>
+
+<body>
+    <input type="password" value="my input" id="error"><br><br>
+    <input type="checkbox" onclick="myFunction()">Show 
+
+
+    
+    <script>
+        function myfunction() {
+
+            var s = document.getElementById("error");
+
+            if (s.type === "password") {
+                s.type = "text";
+            } 
+            else {
+                s.type = "password";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

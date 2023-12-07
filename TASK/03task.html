@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript form validation</title>
+</head>
+
+<body>
+    <form action="">
+
+        <fieldset>
+            <legend>form validation</legend>
+            <input type="name" placeholder="name" onblur="uname">
+            <span id="error1"></span>
+            <br>
+            <input type="email id" placeholder="email id" onblur="uemail">
+            <span id="error2"></span>
+            <br>
+            <input type="password" placeholder="password" onblur="upass">
+            <span id="error3"></span>
+            <br>
+            <input type="mobile number" placeholder="mobile number" onblur="umobile">
+            <span id="error4"></span>
+            <br>
+            <button>submit</button>
+            <button>reset</button>
+        </fieldset>
+
+
+        <!-- script is here  -->
+
+        <script>
+            function handleuname() {
+                let uname = document.getElementById("uname").value;
+                console.log(uname);
+                if (uname == "") {
+                    document.getElementById('error1') .innerText="please enter your uname"
+                    console.log('user name is empty');
+
+                }
+
+                else{
+                    document.getElementById('error1') .innerText=""
+                    console.log('user name is' + uname);
+
+                }
+            }
+        </script>
+
+    </form>
+</body>
+
+</html>
