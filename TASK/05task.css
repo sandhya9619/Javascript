@@ -17,7 +17,10 @@
     height: 600px;
     line-height: 70px;
     margin: 40px;
-    /* border: 1px solid black; */
+}
+.LOGO{
+    border: 1px solid black;
+    filter: invert(100% black);
 }
 
 .password,
@@ -55,9 +58,16 @@ hr {
     font-size: 20px;
 
 }
-
+h1{
+    /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    /* font-family: cursive; */
+    /* font-family: fantasy; */
+    /* font-family: monospace; */
+}
 .signup {
-    /* border: 1px solid black; */
     background-color: white;
     width: 600px;
     font-size: 20px;
