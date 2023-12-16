@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+        }
+        .insta-wrapper, .signup{
+            border: 1px solid gray;
+            margin: 10px auto;
+            width: 26%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .instagram-image{
+            background-image: url(https://static.cdninstagram.com/rsrc.php/v3/ya/r/dAoPDEPVlH5.png);
+            background-position: 0px -52px;
+            background-size: auto;
+            width: 175px;
+            height: 51px;
+            background-repeat: no-repeat;
+            margin:40px auto 40px; 
+        }
+        .login{
+            width: 75%;
+            margin: 4px auto;
+            background-color: rgb(0, 209, 246);
+            color: white;
+            padding: 7px 0;
+            border-radius: 8px;
+            border: none;
+            
+        }
+
+        .pass, .uname{
+            width: 75%;
+            margin: 4px auto;
+            padding: 9px 0 7px 8px;
+            background-color: rgb(241, 241, 241);
+            border-radius: 4px;
+            border: 1px solid grey;
+        }
+        .uname{
+            display: flex;
+            align-items: center;
+            /* padding: 10px 5px; */
+        }
+        .inputs{
+            background: transparent;
+            border: none;
+            width: 100%;
+            outline: none;
+            margin: 2px 0;
+        }
+        a{
+           margin: 0 auto;
+        }
+        .pass{
+            display: flex;
+            align-items: center;
+        }
+        .pass input+p{
+            margin-right: 10px;
+            display: none;
+            cursor: pointer;
+        }
+        .uname, .pass{
+            position: relative;
+        }
+        .uname p, .pass .first{
+            position: absolute;
+            z-index: 1;
+            font-size: 13px;
+            top:9px;
+            font-family: sans-serif;
+            color: rgb(101, 101, 101);
+        }
+        .uname input, .pass input{
+            position: relative;
+            z-index: 2;
+        }
+        .acc{
+            padding: 25px;
+            text-align: center;
+        }
+        .get{
+            text-align: center;
+        }
+        .plst{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            width: 35%;
+            margin: 0 auto;
+            padding-top: 15px;
+        }
+      
+        .comp-logo{
+            width: 30%;
+            padding: 5px;
+        }
+        .line{
+            margin-bottom: 5px;
+        }
+        .or{
+            position: relative;
+        }
+        .line-left{
+            position: absolute;
+            top: -7px;
+            left: 50px;
+        }
+        .line-right{
+            position: absolute;
+            top: -7px;
+            right: 50px;
+        }
+ </style>
+</head>
+<body>
+    <section>
+        <div class="insta-wrapper">
+            <div class="instagram-image"></div>
+
+            <div class="uname">
+                <p id="unamep">Phone number, username, or email</p>
+                <input id="phone-number" oninput="dtu()" class="inputs" type="text" placeholder="">
+            </div>
+            <div class="pass">
+                <p class="first" id="first">Password</p>
+                <input id="pass-id" class="inputs"  oninput="dtu2()" type="password" placeholder="">
+                <p id="show" onclick="handlevalidation()">Show</p>
+            </div>
+
+            <button class="login" style="margin-bottom: 15px;">Log in</button>
+            
+            <div class="or"  style="text-align: center;">  
+                <p><span class="line-left">______________</span>OR<span class="line-right">______________</span></p>
+            </div>
+
+            <div style="text-align: center; padding: 15px 0 0;">
+                <p class="facebook"> <span><i class="fa-brands fa-square-facebook" style="color: #213454;"></i>
+                </span> Log in with Facebook
+                </p>
+            </div>
+
+            <a style="text-decoration: none; padding: 20px 0;" href="">Forgot password?</a>
+        </div>
+
+        <!-- ================================================================================================ -->
+        <div class="signup">
+            <p class="acc">Don't have an account?
+            <span style="color:  rgb(0, 149, 246);"> Sign up</span> </p>
+        </div>
+        <div class="get">
+            <p>Get the app.</p>
+        </div>
+        <div class="plst">
+            <div class="comp-logo">
+                <img src="../../Images/c5Rp7Ym-Klz.png" width="100%" alt="">
+            </div>
+            <div class="comp-logo">
+                <img src="../../Images/EHY6QnZYdNX.png" width="100%" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        function dtu(){
+            if(document.getElementById("phone-number").value!=""){
+                document.getElementById("unamep").style.fontSize = "9px";
+                document.getElementById("unamep").style.top = "1px";
+                document.getElementById("unamep").style.transition = "0.1s";
+            }
+            else{
+                document.getElementById("unamep").style.top = "8px";
+                document.getElementById("unamep").style.fontSize = "13px";
+
+            }
+        }
+        function dtu2(){
+            if(document.getElementById("pass-id").value!=""){
+                document.getElementById("first").style.fontSize = "9px";
+                document.getElementById("first").style.top = "1px";
+                document.getElementById("first").style.transition = "0.1s";
+                document.getElementById("show").style.display = "block";
+                
+            }
+            else{
+                document.getElementById("show").style.display = "none";
+                document.getElementById("first").style.top = "8px";
+                document.getElementById("first").style.fontSize = "13px";
+
+            }
+        }
+
+        function handlevalidation() {
+                var x = document.getElementById("pass-id");
+                if (x.type === "password") {
+                    x.type = "text";
+                    document.getElementById("show").innerText = "Hide";
+                    
+                } else {
+                    document.getElementById("show").innerText = "Show";
+                    x.type = "password";
+                }
+            }
+    </script>
+</body>
+</html>

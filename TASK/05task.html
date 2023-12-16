@@ -22,15 +22,14 @@
             <div class="fpage">
                 <!-- <h1>instagram</h1> -->
                 <div class="LOGO">
-                    <img src="../../../CSS/WEBSITE/IMAGE/instalogo06.svg" alt="">
+                    <img src="../IMAGES/instalogo01.svg" alt="">
                 </div>
-                <input type="phone number, username, or email" placeholder="phone number, username, or email"
-                    class="uname"> <br>
-                <input type="password" placeholder="password" class="password"> <br>
+                <input type="" id="xyz" class="" placeholder="phone number, username, or email" class="uname"> <br>
+                <input type="password" id="abc" placeholder="password" class="password">
+                <span id="sandhya" onclick="show()">Show</span>
+                <br>
                 <button class="login">Log In</button>
-
                 ______________________OR______________________
-
                 <div class="facebook">
                     <div class="fbook">
                         <i class="fa-brands fa-square-facebook"></i>
@@ -54,9 +53,34 @@
                 <div class="para02">
                     <a href="">Sign up</a>
                 </div>
-            </div>
-        </div>
-    </div>
+
+
+
+                <!-- script is here.... -->
+
+                <script>
+                    function show() {
+                        let a = document.getElementById("abc");
+                        let b = document.getElementById("sandhya");
+
+                        if (a.type === "password") {
+                            a.type = "text";
+                            b.textContent = 'Hide';
+                            // document.getElementById("bhargavi").innerText="show"
+                        }
+                        else {
+                            a.type = "password";
+                            b.textContent = "show";
+                            // document.getElementById("bhargavi").innerText="hide"
+                        }
+                    }
+
+
+                </script>
+
+
+
+
 </body>
 
 </html>
