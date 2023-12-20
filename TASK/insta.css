@@ -6,7 +6,6 @@
 
 .container {
     border: 1px solid black;
-    /* background-color: rgba(198, 15, 106, 0.9); */
 }
 
 .instapg {
@@ -45,9 +44,10 @@ button {
 
 }
 
-span {
+#max {
     position: absolute;
-    top: 300px;
+    z-index: 2;
+    top: 302px;
     left: 39%;
 }
 
@@ -55,6 +55,7 @@ input {
     height: 52px;
     width: 396px;
     padding-left: 10px;
+    z-index: 1;
 }
 
 hr {
@@ -73,6 +74,28 @@ hr {
     font-size: 20px;
 
 }
+
+ .phonen {
+    position: absolute;
+    left: 152px;
+    z-index: 2;
+
+
+} 
+
+#class {
+    position: absolute;
+    z-index: 2;
+    left: 152px;
+    
+}
+
+.classu input,
+.spant input {
+    position: relative;
+    z-index: 1;
+}
+
 
 .signup {
     background-color: white;

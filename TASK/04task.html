@@ -9,7 +9,8 @@
 
 <body>
     <input type="password" value="my input" id="error"><br><br>
-    <input type="checkbox" onclick="myFunction()">Show 
+    <input type="checkbox" placeholder="password">
+    <span id="abc" onclick="myfunction">show</span> 
 
 
     
@@ -17,12 +18,16 @@
         function myfunction() {
 
             var s = document.getElementById("error");
-
+            var b = document.getElementById("abc")
             if (s.type === "password") {
                 s.type = "text";
+                b.textContent="hide";
+
+
             } 
             else {
-                s.type = "password";
+                s.type = "text  ";
+                b.textContent="show";
             }
 
         }
