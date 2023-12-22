@@ -58,12 +58,6 @@ input {
     z-index: 1;
 }
 
-hr {
-    margin-top: 30px;
-    width: 170px;
-    margin-left: 40px;
-}
-
 .facebook {
     display: flex;
     margin-left: 130px;
@@ -75,19 +69,19 @@ hr {
 
 }
 
- .phonen {
+.phonen {
     position: absolute;
     left: 152px;
     z-index: 2;
 
 
-} 
+}
 
 #class {
     position: absolute;
     z-index: 2;
     left: 152px;
-    
+
 }
 
 .classu input,
