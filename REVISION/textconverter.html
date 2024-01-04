@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text converter in js</title>
+    <style>
+        .container {
+            border: 1px solid black;
+            height: 329px;
+            background-color: rgb(9, 185, 126);
+            width: 596px;
+        }
+        button{
+            background-color: bisque;
+            border: 1px solid black;
+            height: 44px;
+            width: 196px;
+            margin: 10px;
+        }
+        input{
+            height: 53px;
+            width: 422px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="count">
+            <input type="text" id="Text" placeholder="Enter text">
+            <br>
+            <br>
+            <button onclick="upercase()">upercase</button>
+            <button onclick="lowercase()">lowercase</button>
+            <button onclick="trim()">trim</button>
+            <button onclick="replace()">replace</button>
+            <button onclick="length()">charecter count</button>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        function upercase() {
+            let a = document.getElementById("Text").value
+            document.getElementById("Text").value = a.toUpperCase();
+        }
+
+
+        function lowercase() {
+
+            let b = document.getElementById("Text").value
+            document.getElementById("Text").value = b.toLowerCase();
+        }
+
+        function trim() {
+            let c = document.getElementById("Text").value
+            document.getElementById("Text").value = c.trim();
+        }
+
+
+        function replace() {
+            let d = document.getElementById("Text").value
+            document.getElementById("Text").value = d.replace("abc", "xyz");
+        }
+
+        function length() {
+            let e = document.getElementById("Text").value
+            document.getElementById("Text").value = e.length;
+        }
+
+    </script>
+</body>
