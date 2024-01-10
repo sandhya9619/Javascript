@@ -12,11 +12,11 @@
             box-sizing: border-box;
         }
 
-        .container{
+        .container {
             margin: 80px;
         }
+
         .main-wrap {
-            /* margin: 10px; */
             padding-top: 20px;
             display: grid;
             margin: 0 auto;
@@ -26,11 +26,9 @@
 
 
         .count {
-            /* margin: 20px; */
-            background-color:rgb(113, 2, 113);
+            background-color: rgb(113, 2, 113);
             padding: 20px;
             padding-left: 10px;
-            /* border: 2px solid rgb(173, 73, 73); */
             border: 2px solid black;
             margin: 0 auto;
             height: 335px;
@@ -45,12 +43,11 @@
             border: 2px solid rgb(34, 33, 33);
             border-radius: 10px;
         }
-        input{
-            /* color: black; */
+
+        input {
             height: 45px;
             width: 550px;
-            /* margin: 0 auto; */
-            text-align: center;
+
             font-size: 28px;
             background-color: ;
         }
@@ -61,16 +58,16 @@
     <div class="container">
         <div class="count">
 
-            <input id="text" placeholder="Enter text">
+            <input id="text" placeholder="Enter text" value="">
             <div class="main-wrap">
-                <button class="upper" onclick="upercase()">Uppercase</button>
-                <button class="lower" onclick="lowercase()">Lowercase</button>
+                <button class="upper" onclick="upercase()">UpperCase</button>
+                <button class="lower" onclick="lowercase()">LowerCase</button>
                 <button class="trim" onclick="trimcase()">Trim</button>
                 <button class="clear" onclick="clearcase()">Clear</button>
                 <button class="word" onclick="wordcount()">Wordcount</button>
                 <button class="space" onclick="spaceremove()">Spaceremove</button>
                 <button class="character" onclick="charactercount()">Character count</button>
-                <button class="find" onclick="findandreplace()">Uppercase</button>
+                <button class="find" onclick="findandreplace()">Find and replace</button>
 
             </div>
 
@@ -79,8 +76,53 @@
 
 
     <script>
-        
+        function upercase() {
+            let a = document.getElementById("text").value
+            document.getElementById("text").value = a.toUpperCase();
+        }
+
+        function lowercase() {  function trimcase() {
+            let c = document.getElementById("text").value
+            document.getElementById("text").value = c.trim();
+        }
+            let b = document.getElementById("text").value
+            document.getElementById("text").value = b.toLowerCase();
+        }
+
+
+      
+
+
+        function clearcase() {
+            let d = document.getElementById("text").value
+            if (d.type = "text") {
+
+                d.textcontent = "hide";
+
+            }
+            // document.getElementById("text").value = d.clear();
+        }
+
+        function wordcount() {
+            let e = document.getElementById("text").value
+            document.getElementById("text").value = e.WordCount();
+        }
+
+        function spaceremove() {
+            let f = document.getElementById("text").value
+            document.getElementById("text").value = f.SpaceRemove();
+        }
+
+        function charactercount() {
+            let g = document.getElementById("text").value
+            document.getElementById("text").value = g.length;
+        }
+
+        function findandreplace() {
+            let h = document.getElementById("text").value
+            document.getElementById("text").value = h.replace("madha", "sandhya");
+        }
     </script>
 </body>
 
-</html>/
+</html>
