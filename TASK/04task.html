@@ -8,26 +8,24 @@
 </head>
 
 <body>
-    <input type="password" value="my input" id="error"><br><br>
-    <input type="checkbox" placeholder="password">
-    <span id="abc" onclick="myfunction">show</span> 
+    <label for="">Enter your password : </label>
+    <input type="password" placeholder="password" id="error"><br>
+    <input type="checkbox" onclick="myfunction()"> <b>show</b>
+    <!-- <span id="abc" onclick="myfunction">show</span>  -->
 
 
-    
+
     <script>
+
         function myfunction() {
 
-            var s = document.getElementById("error");
-            var b = document.getElementById("abc")
-            if (s.type === "password") {
+            var s = document.getElementById('error');
+            if (s.type == "password") {
                 s.type = "text";
-                // b.textContent="hide";
-
-
-            } 
+            }
             else {
                 s.type = "password";
-                // b.textContent="show";
+
             }
 
         }
