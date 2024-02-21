@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<!-- saved from url=(0051)file:///C:/Users/bk/Downloads/validation%20(2).html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
 
 
@@ -15,54 +18,54 @@
 
     Mobile: <input type="text" id="mb" onblur="val()">
     <span id="mbErr"></span>
-    
+
     <br>
 
     <button type="submit">Submit</button>
   </form>
 
-    
 
-    <script>
 
-       name1=  document.getElementById('nm');
-       mobile1=  document.getElementById('mb');
-       b1 = document.getElementById('nmErr')
-       b2 = document.getElementById('mbErr')
-        console.log(name1.value);//""
-       
-function val()
-{
-    
-    if(name1.value=="")
-       {
-        // alert("name?")
-        // return 1;
-        b1.innerHTML ="*required"
-        b1.style.color="red"
-        name1.style.border ="2px solid red"
+  <script>
+
+    name1 = document.getElementById('nm');
+    mobile1 = document.getElementById('mb');
+    b1 = document.getElementById('nmErr')
+    b2 = document.getElementById('mbErr')
+    console.log(name1.value);
+
+
+    function val() {
+
+      if (name1.value == "") {
+        alert("name?")
+        return 1;
+        b1.innerHTML = "*required"
+        b1.style.color = "red"
+        name1.style.border = "2px solid red"
         return false;
-       
-       }
 
-       if(mobile1.value=="")
-       {
-        // alert("mobile?")
-        // return -12;
-        b2.innerHTML ="*required"
-        b2.style.color="red"
-        mobile1.style.border ="2px solid red"
-       
-       }
+      }
 
-    //    else 
-    //    {
-    //     b1.innerHTML =""
-    //     name1.style.border ="2px solid green"
-    //    }
-}
+      if (mobile1.value == "") {
+        alert("mobile?")
+        return 1;
+        b2.innerHTML = "*required"
+        b2.style.color = "red"
+        mobile1.style.border = "2px solid red"
+        return false
+
+      }
+
+      else {
+        b1.innerHTML = ""
+        name1.style.border = "2px solid green"
+      }
+    }
 
 
-    </script>
+  </script>
 
-</body></html>
+</body>
+
+</html>

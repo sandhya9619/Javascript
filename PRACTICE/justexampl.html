@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 3 for Pattern</title>
+</head>
+
+<body>
+    <!-- <h4>Q.38 Use pattern in console.log in JS? <br> -->
+    <!-- (1)  <br>
+         1 <br>
+         1 0 <br>
+         1 0 1 <br>
+         1 0 1 0<br>
+         1 0 1 0 1</h4> -->
+
+
+    <script>
+        let num = 5
+        let space = ""
+        for (let i = 1; i <= num; i++) {
+
+            for (let j = 1; j <= num - i; j++) {
+                space += "&nbsp; "
+
+            }
+
+            for (let k = 1; k <= i; k++) {
+                space += "*";
+
+
+            }
+            space += "<br>";
+            // space += /n;
+
+        }
+        document.write(space);
+        // console.log(space);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

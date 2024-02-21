@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>currency change in javascript</title>
 </head>
+
 <body>
     <input type="text" value="" id="input">
     <select name="" id="select" onchange="change()">
@@ -15,10 +17,10 @@
         <option value="0.9422">ruble</option>
         <option value="105.71">pound</option>
     </select>
-    <b id="abc" ></b>
+    <b id="abc"></b>
 
     <script>
-        let a = document.getElementById("input")  
+        let a = document.getElementById("input")
         console.log(a);
 
         let b = document.getElementById("select")
@@ -27,10 +29,11 @@
         let c = document.getElementById("abc");
         console.log(c)
 
-        function change(){
+        function change() {
             c.innerHTML = (a.value * b.value);
         }
-          
+
     </script>
 </body>
+
 </html>
