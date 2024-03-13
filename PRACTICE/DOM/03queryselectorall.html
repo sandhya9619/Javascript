@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queryselectorall</title>
+    <style>
+        .myclass {
+            background-color: aqua;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>welcome</h1>
+    <h2>js</h2>
+    <h1>Queryselectorall</h1>
+
+    <button id="btnclick">click me</button>
+
+    <script>
+        var btns = document.getElementById("btnclick");
+        btns.addEventListener("click", function (element) {
+            var note = document.querySelectorAll("h1");
+            note.forEach(function (element) {
+                element.classList.add("myclass")
+            })
+        })
+    </script>
+</body>
+
+</html>

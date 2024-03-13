@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .pink{
+            color: pink;
+        }
+        .khaki{
+            color: khaki;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+    <h1 class="mypara">this is para</h1>
+
+
+    <script>
+        var allpara = document.querySelectorAll(".mypara")
+        console.log(allpara);
+
+        allpara.forEach(function (element,index) {
+            var colorlist = ["red", "pink", "khaki"];
+            element.classList.add(colorlist[index%colorlist.length])
+            
+        })
+    </script>
+</body>
+</html>
