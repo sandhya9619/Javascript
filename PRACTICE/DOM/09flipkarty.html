@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flipkart</title>
     <style>
+        .flip{
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* flex-direction: column; */
+        }
         .maindiv img{
             height: 70px;
             width: 70px;
             cursor: pointer;
+            flex-direction: column;
+            display: grid;
         }
         .bigimg img{
             height: 400px;
@@ -17,18 +24,21 @@
     </style>
 </head>
 <body>
-    <div class="maindiv">
-        <img src="../DOM/image/flipkart01.webp" alt="">
-        <img src="../DOM/image/flipkart02.jpeg" alt="">
-        <img src="../DOM/image/flipkart03.jpeg" alt="">
-        <img src="../DOM/image/flipkart04.jpeg" alt="">
-        <img src="../DOM/image/flipkart05.webp" alt="">
-    </div>
-    <div class="bigimg">
-        <img src="../DOM/image/flipkart01.webp" alt="">
+    <div class="flip">
 
+        <div class="maindiv">
+            <img src="../DOM/image/flipkart01.webp" alt="">
+            <img src="../DOM/image/flipkart02.jpeg" alt="">
+            <img src="../DOM/image/flipkart03.jpeg" alt="">
+            <img src="../DOM/image/flipkart04.jpeg" alt="">
+            <img src="../DOM/image/flipkart05.webp" alt="">
+        </div>
+        <div class="bigimg">
+            <img src="../DOM/image/flipkart01.webp" alt="">
+            
+        </div>
+        
     </div>
-
 
     <script>
         var allimgs = document.querySelectorAll(".maindiv img")
