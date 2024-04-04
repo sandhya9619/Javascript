@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random number</title>
+</head>
+<body>
+    <button id="myid">Click</button>
+<p id="pid"></p>
+</body>
+
+<script>
+    let btn =document.getElementById("myid");
+    btn.addEventListener("click", function () {
+        
+        let luckeynum = Math.floor(Math.random()*100)
+        console.log(luckeynum);
+        let pid = document.getElementById("pid");
+        pid.textContent=luckeynum;
+    })
+</script>
+</html>

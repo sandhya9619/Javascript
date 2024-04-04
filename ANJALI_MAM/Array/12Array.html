@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="subjectid" placeholder="Enter Subject">
+
+    <button onclick="addData()">Click</button>
+
+    <ul id = "myul"></ul>
+
+
+    <script>
+        var subjectList = [];
+
+        var ul = document.getElementById("myul");
+        var subject = document.getElementById("subjectid");
+
+        function addData(){
+            console.log(subject.value);
+
+            subjectList.unshift(subject.value);
+           renderData();
+
+            subject.value = "";
+
+        }
+
+        function renderData() {
+            ul.innerHTML = "";
+            subjectList.forEach(function (e){
+                var li = document.createElement("li");
+
+                li.textContent = e;
+                ul.append(li);
+                              
+                li.addEventListener("click", function(event){
+                    var removeElement = event.target.textContent;
+                    
+                    subjectList = subjectList.filter(item => item!== removeElement);
+                    // console.log(newArray);
+                    console.log(subjectList);
+
+                    renderData()
+
+                })
+            })
+
+        }
+    </script>
+
+
+</body>
+</html>

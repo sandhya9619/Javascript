@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>odd even</title>
+    <style>
+        .subcontainer .que{
+            color: red;
+            height: 40px;
+        }
+        .subcontainer .ans{
+            color: rgb(226, 137, 137);
+            height: 40px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="maincontainer">
+        <div class="subcontainer">
+            <div class="que">
+                <h1>what html ?</h1>
+            </div>
+            <div class="ans">
+                <h1>hyper text lang</h1>
+            </div>
+        </div>
+    </div>
+    <div class="maincontainer">
+        <div class="subcontainer">
+            <div class="que">
+                <h1>what html ?</h1>
+            </div>
+            <div class="ans">
+                <h1>hyper text lang</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        var allque = document.querySelectorAll(".subcontainer .que");
+        console.log(allque);
+
+        allque.forEach(function(que) {
+            console.log(que);
+
+
+
+            que.addEventListener("click",function () {
+
+                var ans = this.nextElementSibling;
+
+                console.log(ans);
+
+
+                if (ans.style.display === "none") {
+                    ans.style.display = "block"
+                } else {
+                    ans.style.display = "none" 
+                }
+
+
+
+            })
+        })
+    </script>
+</body>
+</html>

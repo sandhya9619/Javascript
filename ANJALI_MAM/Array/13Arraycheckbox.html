@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Checkbx</title>
+</head>
+
+<body>
+    <input type="checkbox" id="selectallcheckbox"> Select all
+    <br><br>
+    <input type="checkbox" class="subject"> C language
+    <br>
+    <input type="checkbox" class="subject"> cpp
+    <br>
+    <input type="checkbox" class="subject"> Java
+    <br>
+    <input type="checkbox" class="subject"> Mern stack
+    <br>
+    <input type="checkbox" class="subject"> Flutter
+
+
+    <ul id="myul"></ul>
+
+    <script>
+        let selectall = document.getElementById("selectallcheckbox");
+        console.log(selectall);
+
+        let subjectall = document.querySelectorAll(".subject");
+        console.log(subjectall);
+        
+        console.log(selectall.checked);
+
+        // let ul = document.getElementById("myul");
+        // ul.append()
+        
+      
+        selectall.addEventListener("change", function () {
+            console.log("change");
+            console.log(selectall.checked);
+
+            subjectall.forEach(function (single_checkbox) {
+                single_checkbox.checked = selectall.checked
+            })
+
+
+            // if(selectall.checked){
+            //     subjectall.forEach(function (single_checkbox) {
+            //         single_checkbox.checked= true
+            //     })
+            // }
+            // else{
+            // subjectall.forEach(function (single_checkbox) {
+            // single_checkbox.checked= false
+            //     })
+            // }
+        });
+
+        subjectall.forEach(function (single_checkbox) {
+            
+            single_checkbox.addEventListener("change",function () {
+                console.log("clicked");
+                if (!single_checkbox.checked)
+                {
+                    selectall.checked = false;
+                }
+                // else
+                // {
+                //     selectall.checked = true;
+                // }
+            })
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

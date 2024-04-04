@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="adding(event)">
+
+        <input type="text" id="name" placeholder="Enter a name">
+        <input type="text" id="subject" placeholder="Enter a subject">
+        <input type="text" id="city" placeholder="Enter a city">
+        <input type="submit" value="submit" name="submit">
+
+        <table>
+            <thead>
+                <!-- <th>Id</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>City</th> -->
+
+            </thead>
+
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+
+    </form>
+
+    <script>
+        function adding(e) {
+
+            e.preventDefault();
+            let name = document.getElementById("name");
+            let subject = document.getElementById("subject");
+            let city = document.getElementById("city");
+
+
+            console.log("hi");
+
+
+
+            var data = JSON.parse(localStorage.getItem("student")) || [];
+
+            let id = data.length + 1;
+
+            let obj = {
+                id: id,
+                name: name.value,
+                subject: subject.value,
+                city: city.value
+            }
+
+            data.push(obj);
+
+            localStorage.setItem("student", JSON.stringify(data),)
+
+            showData()
+        }
+
+        function showData() {
+            var AllData = JSON.parse(localStorage.getItem("student")) || [];
+
+
+
+            var tbody = document.getElementById("tbody");
+
+            tbody.innerHTML = ""
+
+            console.log(tbody);
+
+            for (let i = 0; i < AllData.length; i++) {
+
+                var row = tbody.insertRow();
+                let cell0 = row.insertCell(0);
+                let cell1 = row.insertCell(1);
+                let cell2 = row.insertCell(2);
+                let cell3 = row.insertCell(3);
+                let cell4 = row.insertCell(4);
+                let cell5 = row.insertCell(5);
+
+
+
+                cell0.textContent = AllData[i].id;
+                cell1.textContent = AllData[i].name
+                cell2.textContent = AllData[i].subject
+                cell3.textContent = AllData[i].city
+                cell4.innerHTML = "<button> EDIT </button>"
+                cell5.innerHTML = "<button class = btn data-id = " + AllData[i].id + "> DELETE </button>"
+
+
+
+            }
+
+
+            var btn = document.querySelectorAll(".btn")
+
+            btn.forEach(function (btn) {
+                btn.addEventListener("click", function (e) {
+
+                    let id = Number(e.target.getAttribute("data-id"));
+
+                    // console.log(id);
+
+                    let allRecords = JSON.parse(localStorage.getItem("student")) || [];
+                    let newRecords = allRecords.filter(item => item.id !== id)
+
+                    localStorage.setItem("student", JSON.stringify(newRecords));
+
+
+
+                    showData();
+
+
+
+
+                })
+            })
+        }
+      function  showData(specificRecords){
+        document.getElementById("name").value= specificRecords.name;
+        document.getElementById("subjet").value= specificRecords.subject;
+        document.getElementById("city").value= specificRecords.city;
+
+      }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array in DOM</title>
+ 
+</head>
+<body>
+    <input type="text" id="nameid" placeholder="Enter your name">
+    <button onclick="adddata()">ADD</button>
+
+    <ul id="myul">
+
+    </ul>
+
+    <script>
+        
+        var myarray = [];
+        function adddata() {
+            var value1= document.getElementById("nameid");
+            myarray.push(value1.value);
+            value1.value="";
+            renderdata();
+        }
+        
+        function renderdata() {
+            var ul = document.querySelector("#myul");
+            ul.innerHTML="";  
+            myarray.forEach(function(e,i){
+                var li = document.createElement("li")
+                li.textContent=e;
+                ul.append(li)
+            })
+        }
+    </script>
+</body>
+
+</html>

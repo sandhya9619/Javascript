@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            /* border: 2px solid black; */
+            /* background-color:rgb(254, 165, 254); */
+        }
+
+        .split_img {
+            height: 450px;
+            width: 570px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .part1img {
+            margin: 10px;
+            height: 121px;
+            width: 171px;
+            border: 1px solid black;
+        }
+
+        .part1img img {
+            height: 120px;
+            width: 170px;
+        }
+
+        .join_img {
+            height: 455px;
+            width: 750px;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .part2img {
+            height: 151px;
+            width: 242px;
+            border: 1px solid black;
+        }
+
+        .img img {
+            height: 400px;
+            width: 500px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="split_img">
+            <div class="part1img"><img src="../image/image_part_001.jpg" ondragstart="drag(event)" draggable="true"
+                    alt=""></div>
+            <div class="part1img"><img src="../image/image_part_004.jpg" ondragstart="drag(event)" alt="">
+            </div>
+            <div class="part1img"><img src="../image/image_part_007.jpg" ondragstart="drag(event)" alt="">
+            </div>
+            <div class="part1img"><img src="../image/image_part_008.jpg" ondragstart="drag(event)" alt="">
+            </div>
+            <div class="part1img"><img src="../image/image_part_006.jpg" ondragstart="drag(event)" alt="">
+            </div>
+            <div class="part1img"><img src="../image/image_part_002.jpg" ondragstart="drag(event)" alt="">
+            </div>
+            <div class="part1img"><img src="../image/image_part_009.jpg" ondragstart="drag(event)" alt="">
+            </div>
+            <div class="part1img"><img src="../image/image_part_005.jpg" ondragstart="drag(event)" alt="">
+            </div>
+            <div class="part1img"><img src="../image/image_part_003.jpg" ondragstart="drag(event)" alt="">
+            </div>
+        </div>
+        <div class="join_img">
+            <div class="part2img" ondragover="allowdrag(event)" ondrop="drop(event)"></div>
+            <div class="part2img" ondragover="allowdrag(event)" ondrop="drop(event)"></div>
+            <div class="part2img" ondragover="allowdrag(event)" ondrop="drop(event)"></div>
+            <div class="part2img" ondragover="allowdrag(event)" ondrop="drop(event)"></div>
+            <div class="part2img" ondragover="allowdrag(event)" ondrop="drop(event)"></div>
+            <div class="part2img" ondragover="allowdrag(event)" ondrop="drop(event)"></div>
+            <div class="part2img" ondragover="allowdrag(event)" ondrop="drop(event)"></div>
+            <div class="part2img" ondragover="allowdrag(event)" ondrop="drop(event)"></div>
+            <div class="part2img" ondragover="allowdrag(event)" ondrop="drop(event)"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        let imgs = document.querySelectorAll(".split_img img");
+        console.log(imgs);
+
+        let div = document.querySelectorAll(".join_img div");
+        console.log(div);
+
+        function drag(e) {
+            e.dataTransfer.setData("text/html", e.target.src);
+            console.log(e.target.src);
+
+        }
+
+        function allowdrag(e) {
+            e.preventDefault();
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            let show = e.dataTransfer.getData("text/html")
+            console.log(show);
+            let img = document.createElement("img")
+            console.log(img);
+            img.src = show;
+            e.target.append(img)
+
+
+            if (e.target.src == e.target.src) {
+                console.log("matched");
+            }
+            else {
+                console.log("unmatched");
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

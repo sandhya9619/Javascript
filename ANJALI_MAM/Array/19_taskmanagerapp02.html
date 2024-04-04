@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager App</title>
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <div class="container">
+        <input type="text" id="title" placeholder="Enter Task Title">
+        <input type="text" id="description" placeholder="Task description">
+        <input type="text" id="name" placeholder="Developer name">
+        <input type="text" id="status" placeholder="task complation status ">
+        <input type="text" id="duedate" placeholder="Due Date">
+        <input type="text" id="priority" placeholder="Priority">
+        <button onclick="adddata()" > Edit</button>
+    </div>
+    <table id="tableid">
+
+    </table>
+
+
+    <script>
+        function adddata() {
+
+            let title = document.getElementById("title");
+            let description = document.getElementById("description");
+            let name = document.getElementById("name");
+            let status = document.getElementById("status");
+            let duedate = document.getElementById("duedate");
+            let priority = document.getElementById("priority");
+
+            let table = document.getElementById("tableid")
+
+
+            
+            let btn = document.querySelector("button").addEventListener("click",function () {
+                // console.log("clicked");
+                let tr1 = document.createElement("tr")
+                let td1 = document.createElement("td");
+                td1.textContent=title.value;
+                title.value=""
+                table.append(tr1)
+                tr1.append(td1);
+
+                
+
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 img{
+            height: 70px;
+            width: 70px;
+            cursor: pointer;
+        }
+        .maindiv img{
+            height: 400px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <img src="../DOM/image/imagination01.jpeg" alt="">
+        <img src="../DOM/image/jungle01.jpg" alt="">
+        <img src="../DOM/image/nature01.jpg" alt="">
+        <img src="../DOM/image/nature03.jpg" alt="">
+        <img src="../DOM/image/nature04.jpg" alt="">
+    </div>
+    <div class="maindiv">
+        <img src="../DOM/image/imagination01.jpeg" alt="">
+
+    </div>
+
+
+
+    <script>
+      var note = document.querySelectorAll(".div1 img");
+      console.log(note);
+
+      note.forEach(function (element) {
+        element.addEventListener("click",function () {
+            var path = this.getAttribute("src");
+            console.log(path);
+
+            var newpage = document.querySelector(".maindiv img");
+            console.log(newpage);
+
+            newpage.setAttribute("src",path)
+        })
+      })
+    </script>
+</body>
+</html>

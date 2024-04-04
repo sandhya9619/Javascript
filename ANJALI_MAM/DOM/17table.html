@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table </title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 50%;
+
+        }
+        tr, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Enter uname" id="uname">
+    <input type="text" placeholder="Enter subject" id="subject">
+    <button onclick="adddata()">submit</button>
+
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+        </tr>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+
+    <script>
+        function adddata() {
+            var u= document.getElementById("uname");
+            var subject= document.getElementById("subject");
+
+
+            var tbody = document.getElementById("tbody");
+            var newrow = document.createElement("tr");
+
+            var newdata = document.createElement("td");
+
+            newdata.textContent=u.value;
+            newrow.append(newdata);
+            var newdata = document.createElement("td");
+
+            newdata.textContent= subject.value;
+            newrow.append(newdata);
+
+
+
+            u.value= "";
+            subject.value= "";
+
+
+            tbody.append(newrow)
+        }
+    </script>
+</body>
+</html>

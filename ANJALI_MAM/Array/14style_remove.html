@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Remove</title>
+    <style>
+        #myid{
+            height: 50px;
+            border-radius: 50%;
+            width: 50px;
+            background-color: black;
+        }
+        .myclass{
+            height: 150px;
+            border-radius: 50%;
+
+            width: 150px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="myid"></div>
+
+
+
+    <script>
+        var div = document.querySelector("div");
+        console.log(div);
+
+        div.addEventListener("click",function () {
+            console.log("clicked");
+
+            div.classList.add("myclass");
+            console.log(div);
+
+            div.removeAttribute("id");
+            console.log(div);
+
+
+        })
+    </script>
+</body>
+</html>

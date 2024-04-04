@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asian Paint </title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .img img {
+            height: 400px;
+            width: 700px;
+        }
+
+        .img {
+            margin: 0 auto;
+            text-align: center;
+            align-items: center;
+        }
+
+        .catalogue {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .cata01,
+        .cata02,
+        .cata03,
+        .cata04 {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+        /* }
+
+        .cata01 {
+            /* background-color: brown; */
+            background: url(../DOM/image/wall01.jpg);
+        }
+
+        .cata02 {
+            /* background-color: purple; */
+            background: url(../DOM/image/wall02.jpg);
+
+        }
+
+        .cata03 {
+            /* background-color: green; */
+            background: url(../DOM/image/wall04.jpg);
+
+
+        }
+
+        .cata04 {
+            background: url(../DOM/image/wall06.jpg);
+
+            /* background-color: pink; */
+        } 
+    </style>
+</head>
+
+<body>
+    <h1>Asian Paint </h1>
+    <div class="img">
+        <img src="../DOM/image/bgimg02.png" id="imgid" alt="">
+    </div>
+    <div class="catalogue">
+        <div class="cata01" id="cata01"><img src="../DOM/image/wall01.jpg" alt=""></div>
+        <div class="cata02" id="cata02"><img src="../DOM/image/wall02.jpg" alt=""></div>
+        <div class="cata03" id="cata03"><img src="../DOM/image/wall04.jpg" alt=""></div>
+        <div class="cata04" id="cata04"><img src="../DOM/image/wall06.jpg" alt=""></div>
+    </div>
+
+    <script>
+         var first = document.getElementById("cata01");
+         var second = document.getElementById("cata02");
+         var third = document.getElementById("cata03");
+        var forth = document.getElementById("cata04");
+
+        var imgs = document.querySelectorAll(".catalogue img")
+        console.log(imgs);
+         var imgid = document.getElementById("imgid")
+
+        first.addEventListener("click", function () {
+             imgid.style.background = "url(../DOM/image/wall01.jpg)";
+             first.style.boxShadow = "0px 0px 15px"
+         })
+         second.addEventListener("click", function () {
+             imgid.style.background = "url(../DOM/image/wall02.jpg)";
+             second.style.boxShadow = "0px 0px 15px"
+         })
+         third.addEventListener("click", function () {
+             imgid.style.background = "url(../DOM/image/wall04.jpg)";
+             third.style.boxShadow = "0px 0px 15px"
+         })
+
+         forth.addEventListener("click", function () {
+             imgid.style.background = "url(../DOM/image/wall06.jpg)";
+             forth.style.boxShadow = "0px 0px 15px";
+         })
+
+    </script>
+</body>
+
+</html>

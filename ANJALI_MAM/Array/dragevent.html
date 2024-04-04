@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag event</title>
+    <style>
+        .dragcontainer {
+            height: 150px;
+            width: 150px;
+            background-color: powderblue;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        .maincontainer {
+            height: 300px;
+            width: 300px;
+            background-color: rgb(2, 78, 88);
+            margin: 20px;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="dragcontainer" id="dragid" draggable="true" ondragstart="drag(event)"></div>
+    <div class="maincontainer" id="mainid" ondragover="allowdrag(event)" ondrop="drop(event)"></div>
+
+
+    <script>
+        function drag(e) {
+            //set 
+            // e.dataTransfer.setData("text/plain", e.target.id); //id set
+            e.dataTransfer.setData("text/html","<p>hello guys</p>"); 
+
+        }
+
+        function allowdrag(e) {
+            e.preventDefault();
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            // let id = e.dataTransfer.getData("text/plain"); //get id
+            // console.log(id);
+            // let element = document.getElementById(id);
+            // console.log(element);
+            // e.target.append( element);
+            
+            
+
+        let data = e.dataTransfer.getData("text/html");
+        console.log(data);
+
+        let d1 = document.createElement("div");
+        console.log(d1);
+
+        d1.innerHTML= data;
+        console.log(d1);
+        
+        e.target.append(d1)
+    }
+        </script>
+</body>
+
+</html>

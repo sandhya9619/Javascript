@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+</head>
+<body>
+    
+    <input type="checkbox" name="" id="selectAllcheckbox">selectAll
+    <br><br>
+    <input type="checkbox" name="" class="subject">c language
+    <br>
+    <input type="checkbox" name="" class="subject">c pp
+    <br>
+    <input type="checkbox" name="" class="subject">java
+    <br>
+    <input type="checkbox" name="" class="subject">mern stack
+    <br>
+    <input type="checkbox" name="" class="subject">python
+
+    <ul id="myul">
+
+    </ul>
+
+    <script>
+
+        let myul=document.getElementById('myul');
+
+        let selectAllcheckbox=document.getElementById('selectAllcheckbox');
+
+        let childcheckbox=document.querySelectorAll('.subject');
+
+
+        //array
+        let array=[];
+
+        selectAllcheckbox.addEventListener('change',function ()
+         {
+            //  console.log(selectAllcheckbox.checked);
+            // console.log('click');
+            childcheckbox.forEach(function (element)
+             {
+                element.checked=selectAllcheckbox.checked;
+               let a= element.nextSibling.textContent;
+               array.push(a);
+            })
+
+            array.forEach(function (arrelem)
+             {
+                // console.log(arrelem);   
+               let li=document.createElement('li');
+               li.textContent=arrelem;
+               myul.append(li) 
+            })
+
+        })
+
+        childcheckbox.forEach(function (element)
+         {
+            element.addEventListener('change',function ()
+             {
+                let checksecondvalue=this.nextSibling.textContent;
+
+                 let a=true;
+                childcheckbox.forEach(function (element3)
+                 {
+                    if (!element3.checked)
+                     {
+                        a=false
+                    }    
+                })
+                selectAllcheckbox.checked=a
+                array.push(checksecondvalue)
+                
+                myul.innerHTML='';
+                array.forEach(function (arrelem)
+                 {
+                     li=document.createElement('li');
+                    li.textContent=arrelem;
+                    myul.append(li);    
+                })
+
+                // console.log(array);
+            })    
+        })
+        
+
+    </script>
+
+</body>
+</html>

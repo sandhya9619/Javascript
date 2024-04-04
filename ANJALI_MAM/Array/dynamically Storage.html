@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0133)file:///C:/Users/bk/AppData/Local/Temp/446a61d6-547f-4335-b3b7-3207710663c0_dynamiclocalstorage.html.zip.3c0/dynamiclocalstorage.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dynamically Storage</title>
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        tr,th,td{
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="file:///C:/Users/bk/AppData/Local/Temp/446a61d6-547f-4335-b3b7-3207710663c0_dynamiclocalstorage.html.zip.3c0/dynamiclocalstorage.html" onsubmit="addData(event)">
+    <input type="text" id="nameid" placeholder="Enter a name">
+    <input type="text" id="subjectid" placeholder="Enter a subject">
+    <input type="text" id="cityid" placeholder="Enter a city">
+
+    <input type="submit" name="submit">
+</form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>city</th>
+                <th colspan="2">action</th>
+                
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+<script>
+    function addData(e){
+        e.preventDefault();
+        let name = document.getElementById("nameid");
+        let subject = document.getElementById("subjectid");
+        let city = document.getElementById("cityid");
+         
+        var exist = JSON.parse(localStorage.getItem("student")) || [];
+        var id = exist.length + 1;
+        console.log(exist);
+
+        var obj = {
+            id : id,
+            name : name.value,
+            subject : subject.value,
+            city : city.value
+        }
+
+        exist.push(obj);
+        localStorage.setItem("student", JSON.stringify(exist))
+    }
+
+    function getdatafromLocal(){
+        var get = JSON.parse(localStorage.getItem("student")) || [];
+        var tbody = document.getElementById("tbody");
+        for (i=0; i<get.length;i++){
+
+                console.log(get[i]);
+        }
+        
+    }
+
+</script>
+
+
+    
+
+</body></html>

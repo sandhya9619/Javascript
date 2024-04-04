@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d/w innerhtml & Text Contant</title>
+</head>
+<body>
+    <div id="myh1"></div>
+    <div id="mydiv"></div>
+    <button id="btnid">Add Text</button>
+
+    <script>
+        document.getElementById("btnid").addEventListener("click",function () {
+            var h1 = document.querySelector("#myh1");
+
+            h1.innerHTML = "Hello Welcome To Innerhtml";
+
+            var div =document.querySelector("#mydiv");
+            div.textContent="HELLO TEXT CONTANT DIV"
+            // div.textContent="<h1>hello</h1>";
+            div.innerHTML="<h1>hello</h1>";
+            console.log(div);
+
+        })
+    </script>
+
+</body>
+</html>

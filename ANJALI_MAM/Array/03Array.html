@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password hide show</title>
+</head>
+<body>
+    <input type="password" id="passid" placeholder="Enter Password">
+    <button id="btnid" onclick="hideunhide()">show</button>
+
+    <script>
+        function hideunhide() {
+            var password=document.getElementById("passid");
+            var btn = document.getElementById("btnid");
+            console.log(password.type);
+            
+
+            if (password.type === "password") {
+                password.type = "text";
+                btn.textContent = "hide"
+            } else {
+                password.type = "password";
+                btn.textContent ="show"
+            }
+        }
+    </script>
+</body>
+
+</html>

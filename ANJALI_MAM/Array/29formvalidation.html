@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+</head>
+
+<body>
+    <form action="" onsubmit="return checkvalidation(event)">
+        <input type="text" id="nameid" placeholder="Enter your name">
+        <span id="pid"></span>
+        <br>
+        <input type="email" id="emailid" placeholder="Enter your email">
+        <br>
+        <input type="submit" name="submit" value="submit">
+    </form>
+
+
+    <script>
+        function checkvalidation(e) {
+            e.preventDefault();
+            let name = document.getElementById("nameid");
+            console.log(name.value);
+            let email = document.getElementById("emailid");
+
+            let emailpattern =  "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
+
+
+
+            if (name.value.length == 0) {
+                // alert("name is requered")
+                let p = document.getElementById("pid");
+                p.textContent = "name is requiered*"
+                p.style.color = "red"
+                return false;
+
+            }
+            if (!isNaN(name.value)) {
+                // alert("nonly requierd charecter")
+
+                let p = document.getElementById("pid");
+                p.textContent = "only requierd charecter*"
+                p.style.color = "red"
+                return false;
+
+
+
+            }
+            if (name.value.length < 8) {
+                // alert("required must be 8 or more charecter")
+
+                let p = document.getElementById("pid");
+                p.textContent = " required must be 8 or more charecter *"
+                p.style.color = "red"
+                return false;
+
+            }
+            if (!emailpattern.test(email.value)) {
+                alert("invalid email address")
+                return false;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic create link</title>
+</head>
+<body>
+    <input type="text" id="textid" placeholder="Enter name" />
+    <input type="text" id="linkid" placeholder="Enter link"/>
+<button onclick="adddata()">click</button>
+
+<ul id="myul"></ul>
+
+    <script>
+
+function adddata() {
+    
+    var textname = document.getElementById("textid");
+    var linkvalue = document.getElementById("linkid");
+
+    var a = document.createElement("a");
+    a.textContent= textname.value;
+    a.setAttribute("href",linkvalue.value);
+
+    var li = document.createElement("li");
+    li.append(a);
+
+    var ul = document.getElementById("myul");
+    ul.append(li);
+}
+
+
+    </script>
+</body>
+</html>

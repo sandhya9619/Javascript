@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flipkart</title>
+    <style>
+        .flip{
+            display: flex;
+            position: relative;
+            z-index: 2;
+            /* gap: 20px; */
+            /* flex-wrap: wrap; */
+            /* flex-direction: column; */
+        }
+        .maindiv img{
+            height: 70px;
+            width: 70px;
+            cursor: pointer;
+            padding: 10px;
+            /* flex-direction: column; */
+            display: grid;
+        }
+        .bigimg img{
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="flip">
+
+     
+
+        <div class="maindiv">
+            <img src="../DOM/image/wall01.jpg" alt="">
+            <img src="../DOM/image/wall02.jpg" alt="">
+            <img src="../DOM/image/wall04.jpg" alt="">
+            <img src="../DOM/image/wall06.jpg" alt="">
+        </div>
+        <div class="bigimg">
+            <!-- <img src="" alt="" id="img001"> -->
+            <img src="../DOM/image/bgimg02.png" alt="">
+        </div>
+        
+    </div>
+
+    <script>
+        var allimgs = document.querySelectorAll(".maindiv img")
+        console.log(allimgs);
+
+        allimgs.forEach(function (element) {
+            element.addEventListener("click", function () {
+                var path = this.getAttribute("src");
+                console.log(path);
+
+                var path2 = document.querySelector(".bigimg");
+                console.log(path2);
+
+                path2.setAttribute("src",path);
+            })
+        })
+            
+    
+    </script>
+</body>
+</html>

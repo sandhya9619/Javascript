@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 40%;
+        }
+
+        tr,
+        th,
+        td {
+            border-collapse: collapse;
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="adddata()">
+        <input type="text" id="employid" placeholder="Enter employ name">
+        <input type="text" id="subjectid" placeholder="Enter subject name">
+        <input type="text" id="city" placeholder="Enter city name">
+        <input type="submit" value="submit">
+    </form>
+    <table>
+        <thead>
+
+            <th>Employ name</th>
+            <th>subject</th>
+            <th>city</th>
+            <th colspan="2">Action</th>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+    <script>
+        function adddata() {
+
+
+
+            let employ = document.getElementById("employid");
+            let subject = document.getElementById("subjectid");
+            let city = document.getElementById("city");
+
+
+            let olddata = JSON.parse(localStorage.getItem("abc")) || [];
+            let id = olddata.length + 1;
+
+            console.log(city);
+
+
+            let obj = {
+                employ: employ.value,
+                subject: subject.value,
+                city: city.value
+            };
+            console.log(obj);
+            olddata.push(obj);
+
+
+            console.log(olddata);
+
+            localStorage.setItem("abc", JSON.stringify(olddata));
+
+        }    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .pink{
+            color: pink;
+        }
+      
+    </style>
+</head>
+<body>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+
+    <script>
+        var allpara = document.querySelectorAll("p");
+        allpara.forEach(function (element,index) {
+            if (index%2 == 0) {
+                element.style.color="blue"
+            }
+            else{
+                element.style.color="black"
+
+            }
+        })
+    </script>
+</body>
+</html>

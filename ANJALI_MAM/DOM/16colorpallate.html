@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color pallate</title>
+    <style>
+        .color1 {
+            border: 1px solid black;
+            height: 50px;
+            width: 50px;
+            /* filter: drop-shadow(5px 5px 15px black); */
+            /* background-color: #cb1c1c; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myid"></div>
+    <script>
+        var inpdata = document.createElement("input");
+        inpdata.type = "text";
+        inpdata.name = "name";
+        inpdata.placeholder = "Enter color";
+        inpdata.id = "inpid";
+
+        var divdata = document.getElementById("myid")
+        divdata.appendChild(inpdata);
+
+        document.body.append(divdata);
+
+        var btndata = document.createElement("button");
+        btndata.textContent = "add color";
+        divdata.appendChild(btndata)
+        console.log(divdata);
+
+        btndata.addEventListener("click", function () {
+            var inpvalue = document.getElementById("inpid").value;
+
+            var colordiv = document.createElement("div");
+            colordiv.textContent=inpvalue
+            divdata.append(colordiv);
+            colordiv.classList.add("color1");
+            inpdata.value="";
+
+            colordiv.style.backgroundColor = inpvalue;
+
+            // colordiv.addEventListener("click", function (element) {
+            // // body.style.backgroundColor = inpvalue;
+
+            // console.log(element);
+            // element.style.body=inpvalue;
+
+        // })
+        // colordiv.
+
+        })
+
+     
+
+
+        // console.log(inpvalue);
+        // divdata.append(inpvalue);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dynamic object</title>
+</head>
+<body>
+    <input type="text" id="nameid" placeholder="Enter Name">
+    <br>
+    <input type="text" id="subjectid" placeholder="Enter Subject">
+    <br>
+    <!-- <button></button> -->
+    <input type="submit" id="submit" value="submit">
+
+    <ul id="myul">
+
+    </ul>
+
+    <script>
+        var obj =[];
+
+        var btn = document.getElementById("submit");
+
+        var myul = document.getElementById("myul");
+        btn.addEventListener("click",function () {
+            var name = document.getElementById("nameid");
+            var subject = document.getElementById("subjectid");
+
+             var subjectvalue = subject.value;
+             var namevalue = name.value;
+
+             console.log(namevalue);
+             console.log(subjectvalue);
+             obj["name"]=namevalue;
+             obj["subject"]=subjectvalue;
+
+             for(var key in obj){
+                
+                var li = document.createElement("li")
+                li.textContent= key +" "+ obj[key];
+                li.append(myul);
+                console.log(obj);
+             }
+        })
+
+    </script>
+</body>
+</html>

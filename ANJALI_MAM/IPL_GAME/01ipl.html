@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .backimg img {
+            width: 100%;
+            height: 590px;
+            position: fixed;
+        }
+
+        .team-1 {
+            position: fixed;
+            top: 10px;
+            padding: 10px;
+        }
+
+        .csk img,
+        .srh img,
+        .kkr img,
+        .gt img {
+            margin-top: 1px;
+            height: 150px;
+            width: 170px;
+        }
+
+        .main-div {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            height: 500px;
+            width: 500px;
+            border: 1px solid black;
+
+        }
+
+        .first-team {
+            height: 150px;
+            width: 180px;
+            border: 1px solid black;
+
+        }
+
+        .first-team img {
+            height: 150px;
+            width: 180px;
+        }
+
+        .second-team img {
+            height: 150px;
+            width: 180px;
+            border: 1px solid black;
+
+        }
+
+        .main-div {
+            display: none;
+            position: fixed;
+            top: 25px;
+            right: 20px;
+            background: url(../IPL_GAME/IMAGE/backimg02.jpeg) no-repeat center center/cover;
+        }
+
+        .main-div b {
+            padding-top: 60px;
+            font-size: 25px;
+            color: white;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="backimg">
+        <img src="../IPL_GAME/IMAGE/iplbackimg01.jpg" alt="">
+    </div>
+    <div class="team-1">
+        <div class="csk"><img src="../IPL_GAME/IMAGE/csklogo01.jpg" alt=""></div>
+        <div class="srh"><img src="../IPL_GAME/IMAGE/srhlogo01.jpg" alt=""></div>
+        <div class="kkr"><img src="../IPL_GAME/IMAGE/kkr_logo.jpg" alt=""></div>
+        <div class="gt"><img src="../IPL_GAME/IMAGE/gtlogo01.webp" alt=""></div>
+    </div>
+    <!-- <div class="main-box"> -->
+
+        <div class="main-div">
+            <div class="first-team">
+                <img src=" " alt="" class="blank">
+            </div>
+            <b>VS</b>
+            <div class="second-team">
+                <img src="" alt="" id="second03">
+            </div>
+        </div>
+        <!-- <br>
+        <div class="btn-div">
+            <button id="checkid">H/T</button>
+
+        </div> -->
+    <!-- </div> -->
+
+    <script>
+
+        let arr = [];
+
+        let note = document.querySelectorAll(".team-1 img")
+        console.log(note);
+
+        note.forEach(function (element) {
+            arr.push(element.src);
+            element.addEventListener("click", function () {
+                let maindiv = document.querySelector(".main-div");
+                maindiv.style.display = "block"
+                maindiv.style.display = "flex"
+                var path = this.getAttribute("src");
+                // console.log(path);
+
+                let newpath = document.querySelector(".blank");
+                console.log(newpath);
+
+                newpath.setAttribute("src", path);
+
+                let math = Math.floor(Math.random() * arr.length);
+                console.log(note[length]);
+                let second = document.getElementById("second03")
+                second.src = arr[math]
+
+
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>
