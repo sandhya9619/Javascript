@@ -13,6 +13,12 @@
         crossorigin="anonymous"></script>
 
     <style>
+        body {
+            background: url(../KALYAN_JEWELLER/images/bangles01.jpeg)no-repeat center center/cover;
+            background-attachment: fixed;
+
+        }
+
         .display-none {
             display: none;
         }
@@ -22,14 +28,14 @@
 </head>
 
 <body>
-    <section class="vh-200" style="background-color: rgb(224, 175, 249) ;">
-        <div class="container h-100 ">
-            <div class="row d-flex justify-content-center align-items-center h-100 ">
+    <section class="vh-200">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-9">
 
-                    <h1 class="text-black text-center mb-4">Kalyan Jewellers </h1>
+                    <h1 class="text-light text-center mb-4">Kalyan Jewellers </h1>
 
-                    <div class="card mb-4" style="border-radius: 15px; ">
+                    <div class="card mb-4 " style="border-radius: 15px; opacity: 0.7; border: 1px solid black;">
                         <div class="card-body">
 
                             <div class="row align-items-center pt-4 pb-3">
@@ -44,22 +50,22 @@
                             </div>
                             <hr class="mx-n3">
                             <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-                                <h6 class="ps-5 pe-5 ">Gender: </h6>
-                                <div class="form-check form-check-inline mb-0 me-4 ps-5 pe-4">
+                                <h6 class="ps-5 pe-5">Gender: </h6>
+                                <div class="form-check form-check-inline mb-0 me-4 ms-4 ps-5">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="femaleGender" value="option1" />
-                                    <label class="form-check-label" for="femaleGender">Female</label>
+                                        id="femaleGender" value="female" />female
+                                    <!-- <label class="form-check-label" class="genderclass" for="femaleGender">Female</label> -->
                                 </div>
                                 <div class="form-check form-check-inline mb-0 me-4 ps-5 pe-4">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="maleGender" value="option2" />
-                                    <label class="form-check-label" for="maleGender">Male</label>
+                                        id="maleGender" value="male" />male
+                                    <!-- <label class="form-check-label" for="maleGender" class="genderclass">Male</label> -->
                                 </div>
 
                                 <div class="form-check form-check-inline mb-0 ps-5 pe-4">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="otherGender" value="option3" />
-                                    <label class="form-check-label" for="otherGender">Other</label>
+                                        id="otherGender" value="other" />other
+                                    <!-- <label class="form-check-label" for="otherGender" class="genderclass">Other</label> -->
                                 </div>
 
                             </div>
@@ -70,7 +76,7 @@
                                     <h6 class="mb-0">Enter Age :</h6>
                                 </div>
                                 <div class="col-md-9 pe-5">
-                                    <input type="text" class="form-control form-control-lg" />
+                                    <input type="number" id="ageinput" class="form-control form-control-lg" />
                                 </div>
                             </div>
 
@@ -105,20 +111,8 @@
                                 </div>
                             </div>
 
-                            <hr class="mx-n3">
-                            <div class="row align-items-center py-3">
-                                <div class="col-md-3 ps-5">
-                                    <h6 class="mb-0"></h6>
-                                </div>
-                                <div class="col-md-9 pe-5  ps-5 ps-5 ps-5 ">
-                                    <button class="btn btn-dark btn-lg " onclick="change_price()">Click Me</button>
-                                    <!-- <input type="text" class="form-control form-control-lg" /> -->
-                                </div>
-                            </div>
-
                             <div class="display-none" id="display">
 
-                                <hr class="mx-n3">
                                 <div class="row align-items-center py-3">
                                     <div class="col-md-3 ps-5">
                                         <h6 class="mb-0">Current Gold Price (1 grm) :</h6>
@@ -128,7 +122,6 @@
                                     </div>
                                 </div>
 
-                                <hr class="mx-n3">
                                 <div class="row align-items-center py-3">
                                     <div class="col-md-3 ps-5">
                                         <h6 class="mb-0">Total Gold Rate :</h6>
@@ -138,8 +131,6 @@
                                     </div>
                                 </div>
 
-
-                                <hr class="mx-n3">
                                 <div class="row align-items-center py-3">
                                     <div class="col-md-3 ps-5">
                                         <h6 class="mb-0">Making Charges (1 grm) :</h6>
@@ -149,7 +140,6 @@
                                     </div>
                                 </div>
 
-                                <hr class="mx-n3">
                                 <div class="row align-items-center py-3">
                                     <div class="col-md-3 ps-5">
                                         <h6 class="mb-0">Total Making Charges :</h6>
@@ -159,7 +149,6 @@
                                     </div>
                                 </div>
 
-                                <hr class="mx-n3">
                                 <div class="row align-items-center py-3">
                                     <div class="col-md-3 ps-5">
                                         <h6 class="mb-0">Total Amount :</h6>
@@ -169,97 +158,124 @@
                                     </div>
                                 </div>
 
-
-
-                                <hr class="mx-n3">
                                 <div class="row align-items-center py-3">
                                     <div class="col-md-3 ps-5">
-                                        <h6 class="mb-0">Discount :</h6>
+                                        <h6 class="mb-0">Discount : <span id="discountDisplay"></span></h6>
                                     </div>
-                                    <div class="col-md-9 pe-5">
-                                        <input type="number" id="discount" class="form-control form-control-lg" />
-                                    </div>
+
                                 </div>
 
-                                <hr class="mx-n3">
-                                <div class="row align-items-center py-3">
+
+                                <div class="row align-items-center py-3 ">
                                     <div class="col-md-3 ps-5">
                                         <h6 class="mb-0">Total Net Amount :</h6>
                                     </div>
-                                    <div class="col-md-9 pe-5">
-                                        <input type="text" id="tnet_amount" class="form-control form-control-lg" />
+                                    <div class="col-md-9 pe-5 ">
+                                        <input type="text" id="tnet_amount"
+                                            class="form-control form-control-lg btn-dark" />
                                     </div>
                                 </div>
 
                             </div>
 
-
-
                         </div>
-
                     </div>
                 </div>
-
-                <!-- <hr class="mx-n3"> -->
-
-                <!-- <div class="px-5 py-4">
-                    <button type="submit" class="btn btn-dark btn-lg ">Send application</button>
-                </div> -->
-
             </div>
-        </div>
-
-        </div>
-        </div>
         </div>
     </section>
 
     <script>
-
         function change_price() {
-
             let display = document.getElementById("display")
             display.style.display = ("block");
 
-            //Total gold 
+            let genderRadios = document.getElementsByName('inlineRadioOptions');
+            let selectedGender;
+
+            for (let i = 0; i < genderRadios.length; i++) {
+                if (genderRadios[i].checked) {
+                    selectedGender = genderRadios[i].value;
+                    break;
+                }
+            }
+
+            console.log(selectedGender);
+
             let pgrm = document.getElementById("pgrmid").value;
             let tgold_rate = document.getElementById("tgold_rate");
             tgold_rate.value = (pgrm * 5752);
 
-            //making charge 1gm = ₹845
-
             let tmaking_grm = document.getElementById("tmaking_grm");
             tmaking_grm.value = (pgrm * 845);
 
-            //Total amount 
             let tamount = document.getElementById("tamount");
-            console.log(typeof tamount);
-            tamount.value = (tgold_rate.value + tmaking_grm.value);
             let goldRate = parseFloat(tgold_rate.value);
-            console.log(typeof goldRate);
             let makingCharge = parseFloat(tmaking_grm.value);
-            console.log(typeof makingCharge);
             tamount.value = goldRate + makingCharge;
 
+            // Retrieve age and purchase amount
+            let age = parseInt(document.getElementById("ageinput").value);
 
-            //discount
-            if (tamount.value >=21000) {
-                let discount = document.getElementById("discount");
+            // Initialize discount
+            let discount = 0;
 
-                console.log("right");
-                discount.value=(tamount.value*15/100);
+            // Apply discount based on gender, age, and purchase amount
+            if (selectedGender === "male") {
+                if (age > 65) {
+                    if (tamount.value > 51000) {
+                        discount = 0.35; // 35%
+                    } else if (tamount.value > 31000) {
+                        discount = 0.3; // 30%
+                    } else if (tamount.value > 21000) {
+                        discount = 0.2; // 20%
+                    }
+                } else {
+                    if (tamount.value > 51000) {
+                        discount = 0.25; // 25%
+                    } else if (tamount.value > 31000) {
+                        discount = 0.2; // 20%
+                    } else if (tamount.value > 21000) {
+                        discount = 0.1; // 10%
+                    }
+                }
+            } else if (selectedGender === "female") {
+                if (age > 65) {
+                    if (tamount.value > 51000) {
+                        discount = 0.4; // 40%
+                    } else if (tamount.value > 31000) {
+                        discount = 0.35; // 35%
+                    } else if (tamount.value > 21000) {
+                        discount = 0.25; // 25%
+                    }
+                } else {
+                    if (tamount.value > 51000) {
+                        discount = 0.3; // 30%
+                    } else if (tamount.value > 31000) {
+                        discount = 0.25; // 25%
+                    } else if (tamount.value > 21000) {
+                        discount = 0.15; // 15%
+                    }
+                }
             }
-            else {
-                console.log("false");
-            }
 
+            // Apply discount to the total amount
+            let discountedAmount = tamount.value - (tamount.value * discount);
 
-            let tnet_amount = document.getElementById("tnet_amount");
-            tnet_amount.value =(tamount.value-discount.value);
+            // Update displayed values
+            // Update displayed values
+            document.getElementById("discountDisplay").innerText = (discount * 100) + "%";
+            document.getElementById("tnet_amount").value = discountedAmount;
+
         }
+
+
+        window.addEventListener("keydown", function (e) {
+            if (e.key == "Enter") {
+                change_price()
+            }
+        })
     </script>
-
-
 </body>
 
 </html>

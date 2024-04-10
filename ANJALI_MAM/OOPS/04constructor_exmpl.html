@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor</title>
+</head>
+<body>
+    <script>
+        class student
+        {
+            constructor(name,city)
+            {
+                this.name = name
+                this.city = city
+            }
+
+            display ()
+            {
+                console.log(`name=${this.name}`);
+                console.log(`city= ${this.city}`);
+            }
+        }
+
+        let obj = new student("sandhya","ahmedabad");
+        obj.display();
+    </script>
+</body>
+</html>

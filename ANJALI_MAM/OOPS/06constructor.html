@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>constructer</title>
+</head>
+
+<body>
+    <script>
+        class Vehicle {
+            _vehicleType = "car"; // varible
+            brandname = "Honda";
+            #model = "SUV";
+
+            change(v1, v2, v3) {
+                this._vehicleType = v1;
+                this.brandname = v2;
+                this.#model = v3;
+            }
+        }
+        let obj = new Vehicle();
+        //visiblity
+        console.log(obj._vehicleType);
+        console.log(obj.brandname);
+        // console.log(obj.#model);
+
+        // accessibility
+        obj.change("bike", "suzuki", "sample");
+
+        console.log(obj._vehicleType);
+        console.log(obj.brandname);
+
+        obj._vehicleType = "truck";
+        obj.brandname = "bus";
+
+        console.log(obj._vehicleType);
+        console.log(obj.brandname);
+
+    </script>
+</body>
+
+</html>

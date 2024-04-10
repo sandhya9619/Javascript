@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructer</title>
+</head>
+<body>
+    <script>
+        class Student 
+        {
+            inputdata(name, subject){
+
+                this.name = name;
+                this.subject = subject;
+
+            }
+
+            dicplaydata(){
+                console.log(`name=${this.name}`);
+                console.log(`subject=${this.subject}`);
+            }
+        }
+
+        let student = new Student();
+        student.inputdata(" sandhya", " frontend developer");
+        student.dicplaydata();
+    </script>
+</body>
+</html>
