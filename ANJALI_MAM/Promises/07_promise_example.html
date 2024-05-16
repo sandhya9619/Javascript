@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promis example</title>
+</head>
+
+<body>
+    <script>
+        let myfun = new Promise((res, rejact) => {
+          console.log("process 1");
+          res("blank milk bottel");
+        })
+          .then((res) => {
+            setTimeout(() => {
+              console.log("process 2");
+              res = "milj fillup";
+            }, 2000);
+            return res;
+          })
+          .then((res) => {
+            console.log("process 3");
+            console.log(res);
+          });
+      </script>
+</body>
+
+</html>

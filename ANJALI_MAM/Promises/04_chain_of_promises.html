@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chain of Promises</title>
+</head>
+<body>
+    <script>
+        let waitimgResponse = new Promise((res,rej)=>{
+            res(20)
+        })
+        .then((resolve)=>{
+            console.log(resolve);
+            return resolve*10;
+        })
+        .then((nextResp)=>{
+            console.log(nextResp);
+        })
+    </script>
+</body>
+</html>
