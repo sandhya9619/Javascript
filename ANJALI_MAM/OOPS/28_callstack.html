@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callstack</title>
+</head>
+<body>
+    <script>
+      
+
+        function display3() {
+            console.log("THIS IS CALLBACK");
+        }
+        function display2(passfunc2) {
+            // display3();
+            passfunc2(display3)
+        }
+        function display1(passfunc1) {
+            // display2();
+            passfunc1(display2);
+        }
+
+        function mainfunction(myparam) {
+            // display1();
+            myparam(display1);
+        }
+
+        mainfunction(display1);
+    </script>
+</body>
+</html>

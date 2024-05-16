@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inheritance </title>
+</head>
+<body>
+    <script>
+        const vehicle ={
+            name : "vehical",
+            brand : "vehical",
+
+            display : function () {
+                console.log("VEHICLE METHOD");
+            }
+        }
+
+
+        // object creation 
+
+        let carobj = Object.create(vehicle);
+
+        carobj.name = "hyundi";
+        carobj.model = "Xseno";
+        carobj.display();
+
+        carobj.mymethod = function () {   // method add
+            console.log("car method");
+        }
+        console.log(carobj.name);
+        console.log(carobj.model);
+     carobj.mymethod();
+
+     carobj.display();
+
+
+
+
+
+
+    </script>
+</body>
+</html>

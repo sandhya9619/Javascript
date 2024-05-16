@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Example with Submenu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        .sidebar .sub-menu {
+            display: none;
+            padding-left: 20px;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        /* For responsiveness */
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+            .sidebar a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <a href="#">Home</a>
+        <div class="sub-menu">
+            <a href="#">Submenu 1</a>
+            <a href="#">Submenu 2</a>
+        </div>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="content">
+        <h2>Main Content</h2>
+        <p>This is the main content area. Add your content here.</p>
+    </div>
+
+    <script>
+        const sidebarLinks = document.querySelectorAll('.sidebar a');
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                const subMenu = this.nextElementSibling;
+                if (subMenu && subMenu.classList.contains('sub-menu')) {
+                    e.preventDefault();
+                    if (subMenu.style.display === 'block') {
+                        subMenu.style.display = 'none';
+                    } else {
+                        subMenu.style.display = 'block';
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
